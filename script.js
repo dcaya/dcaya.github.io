@@ -4,8 +4,6 @@
    2. Dark / light mode switch (remembers the visitor's choice)
    3. Highlight the nav link for the section being viewed
    4. Header shadow on scroll, and a live footer year
-   5. FAQ accordion (one answer open at a time, keyboard friendly)
-   6. Grand opening popup, shown once per visit a few seconds after arrival
    ========================================================================== */
 (function () {
   'use strict';
@@ -132,80 +130,6 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  /* ---------- 5. FAQ accordion ---------- */
-  var triggers = Array.prototype.slice.call(document.querySelectorAll('.faq-trigger'));
-
-  function setFaq(trigger, open) {
-    var panel = document.getElementById(trigger.getAttribute('aria-controls'));
-    if (!panel) return;
-    trigger.setAttribute('aria-expanded', String(open));
-    panel.classList.toggle('is-open', open);
-    trigger.closest('.faq-item').classList.toggle('is-open', open);
-  }
-
-  if (triggers.length) {
-    // Collapse answers only now, so the page stays readable if JavaScript fails
-    root.classList.add('js-accordion');
-    // Turn animations on only after the collapsed state has painted
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { root.classList.add('faq-ready'); });
-    });
-
-    triggers.forEach(function (trigger, index) {
-      trigger.addEventListener('click', function () {
-        var willOpen = trigger.getAttribute('aria-expanded') !== 'true';
-        triggers.forEach(function (other) { setFaq(other, false); }); // one open at a time
-        setFaq(trigger, willOpen);
-      });
-
-      // Arrow keys, Home and End move between questions
-      trigger.addEventListener('keydown', function (e) {
-        var target = null;
-        if (e.key === 'ArrowDown') target = triggers[(index + 1) % triggers.length];
-        else if (e.key === 'ArrowUp') target = triggers[(index - 1 + triggers.length) % triggers.length];
-        else if (e.key === 'Home') target = triggers[0];
-        else if (e.key === 'End') target = triggers[triggers.length - 1];
-        if (target) { e.preventDefault(); target.focus(); }
-      });
-    });
-  }
-
-  /* ---------- 6. Grand opening popup ---------- */
-  var modal = document.getElementById('opening-modal');
-  var MODAL_DELAY = 5000;           // milliseconds after the page loads
-  var MODAL_KEY = 'cc-opening-seen';
-
-  function modalSeen() {
-    try { return sessionStorage.getItem(MODAL_KEY) === '1'; } catch (err) { return false; }
-  }
-  function markModalSeen() {
-    try { sessionStorage.setItem(MODAL_KEY, '1'); } catch (err) { /* storage blocked: ignore */ }
-  }
-
-  if (modal && typeof modal.showModal === 'function') {
-    // Any close (X button, "Maybe later", link, Escape key) ends up here
-    modal.addEventListener('close', function () {
-      document.body.classList.remove('modal-open');
-      markModalSeen();
-    });
-
-    // Buttons and links marked data-modal-close dismiss the popup
-    modal.addEventListener('click', function (e) {
-      if (e.target.closest('[data-modal-close]')) modal.close();
-      // A click on the dimmed backdrop (the dialog element itself) also dismisses it
-      else if (e.target === modal) modal.close();
-    });
-
-    if (!modalSeen()) {
-      window.setTimeout(function () {
-        if (modal.open) return;
-        setMenu(false);                        // don't stack it on top of the mobile menu
-        modal.showModal();
-        document.body.classList.add('modal-open');
-      }, MODAL_DELAY);
-    }
-  }
 
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
