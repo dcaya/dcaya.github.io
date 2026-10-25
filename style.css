@@ -254,6 +254,29 @@ a {
 
 .hero-inner { max-width: 840px; }
 
+/* Hero photo */
+.hero-media { margin-top: clamp(40px, 6vw, 72px); }
+.hero-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-bottom: 4px solid var(--butter);
+  border-radius: var(--radius);
+  background: var(--cream);
+  box-shadow: var(--shadow-md);
+}
+.hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 480px) {
+  .hero-figure img { aspect-ratio: 4 / 3; object-position: 35% center; }
+}
+
 .eyebrow {
   margin: 0 0 16px;
   font-size: 0.78rem;
