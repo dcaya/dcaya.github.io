@@ -123,7 +123,50 @@
     sections.forEach(function (section) { observer.observe(section); });
   }
 
-  /* ---------- 4. Header shadow + footer year ---------- */
+  /* ---------- 4. FAQ accordion ---------- */
+  var faqItems = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
+
+  if (faqItems.length) {
+    // Prepare the FAQ controls before enabling the collapsed accordion styles.
+    faqItems.forEach(function (item) {
+      var trigger = item.querySelector('.faq-trigger');
+      var panel = item.querySelector('.faq-panel');
+      if (!trigger || !panel) return;
+
+      trigger.setAttribute('aria-expanded', 'false');
+      panel.classList.remove('is-open');
+      item.classList.remove('is-open');
+
+      trigger.addEventListener('click', function () {
+        var shouldOpen = trigger.getAttribute('aria-expanded') !== 'true';
+
+        // Keep the accordion to one open answer at a time.
+        faqItems.forEach(function (otherItem) {
+          var otherTrigger = otherItem.querySelector('.faq-trigger');
+          var otherPanel = otherItem.querySelector('.faq-panel');
+          if (!otherTrigger || !otherPanel) return;
+
+          otherTrigger.setAttribute('aria-expanded', 'false');
+          otherPanel.classList.remove('is-open');
+          otherItem.classList.remove('is-open');
+        });
+
+        if (shouldOpen) {
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+          item.classList.add('is-open');
+        }
+      });
+    });
+
+    // Enable collapsed-by-default styles only after the controls are initialized.
+    root.classList.add('js-accordion');
+    window.requestAnimationFrame(function () {
+      root.classList.add('faq-ready');
+    });
+  }
+
+  /* ---------- 5. Header shadow + footer year ---------- */
   var header = document.querySelector('.site-header');
   function onScroll() {
     if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
