@@ -3,7 +3,8 @@
    1. Mobile hamburger menu
    2. Dark / light mode switch (remembers the visitor's choice)
    3. Highlight the nav link for the section being viewed
-   4. Header shadow on scroll, and a live footer year
+   4. FAQ accordion
+   5. Header shadow on scroll, and a live footer year
    ========================================================================== */
 (function () {
   'use strict';
