@@ -4,7 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crumb &amp; Croissant | French Bakery &amp; Pâtisserie in Santa Cruz</title>
-  <meta name="description" content="Crumb &amp; Croissant is a French bakery and pâtisserie coming to Pacific Avenue in downtown Santa Cruz: croissants, artisan breads, pâtisserie, custom cakes and a café, all baked from scratch each morning.">
+  <meta name="description" content="Crumb &amp; Croissant is a French bakery and pâtisserie coming to the beach in Santa Cruz at the Santa Cruz Beach Boardwalk: croissants, artisan breads, pâtisserie, custom cakes and a café, all baked from scratch each morning.">
+
+  <!-- Social sharing / video metadata (domain: https://dcaya.github.io) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Crumb &amp; Croissant">
+  <meta property="og:title" content="Crumb &amp; Croissant | French Bakery &amp; Pâtisserie in Santa Cruz">
+  <meta property="og:description" content="Honest ingredients, patient technique, and baked-this-morning croissants, breads and pastries on the beach in Santa Cruz at the Beach Boardwalk.">
+  <meta property="og:url" content="https://dcaya.github.io/">
+  <meta property="og:image" content="https://dcaya.github.io/images/hero-patisserie.jpg">
+  <meta property="og:image:alt" content="Freshly baked butter croissants, almond croissant, pain au chocolat and lattes on a sunlit marble bistro table overlooking the Santa Cruz Beach Boardwalk">
+  <meta property="og:video" content="https://dcaya.github.io/images/croissant-break.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1280">
+  <meta property="og:video:height" content="720">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crumb &amp; Croissant | French Bakery &amp; Pâtisserie in Santa Cruz">
+  <meta name="twitter:description" content="Butter croissants pulled from the oven every morning on the beach in Santa Cruz, at the Beach Boardwalk.">
+  <meta name="twitter:image" content="https://dcaya.github.io/images/hero-patisserie.jpg">
+
+  <!-- Structured data: helps search engines index and feature the video -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Butter croissant broken open, fresh from the oven",
+    "description": "A warm Crumb & Croissant butter croissant is pulled apart, revealing its laminated, flaky layers. Baked from scratch each morning on the beach in Santa Cruz at the Beach Boardwalk.",
+    "thumbnailUrl": "https://dcaya.github.io/images/hero-patisserie.jpg",
+    "uploadDate": "2026-11-27",
+    "duration": "PT5S",
+    "contentUrl": "https://dcaya.github.io/images/croissant-break.mp4",
+    "embedUrl": "https://dcaya.github.io/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Crumb & Croissant",
+      "logo": { "@type": "ImageObject", "url": "https://dcaya.github.io/images/logo.png" }
+    },
+    "isFamilyFriendly": true
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -55,10 +94,10 @@
             French Bakery &middot; Pâtisserie &middot; Santa Cruz
             <span class="eyebrow-icon" aria-hidden="true">&#9884;</span>
           </p>
-          <h1 id="hero-title">The craft of a Parisian boulangerie, baked this morning in Santa Cruz.</h1>
+          <h1 id="hero-title">The craft of a Parisian boulangerie, baked this morning on the beach in Santa Cruz.</h1>
           <p class="hero-lead">Honest ingredients, patient technique, and baked-this-morning goods that make everyday moments and life's milestones feel special.</p>
           <p class="hero-badge">
-            <span class="badge-icon" aria-hidden="true">&#128197;</span> Opening Saturday, May 8, 2027 &middot; <span class="badge-icon" aria-hidden="true">&#128205;</span> Pacific Avenue, Downtown Santa Cruz
+            <span class="badge-icon" aria-hidden="true">&#128197;</span> Opening Saturday, May 8, 2027 &middot; <span class="badge-icon" aria-hidden="true">&#127968;</span> Santa Cruz Beach Boardwalk, on the beach
           </p>
           <div class="hero-actions">
             <a class="button" href="#services">Explore our offerings <span aria-hidden="true">&rarr;</span></a>
@@ -67,10 +106,33 @@
         </div>
 
         <div class="hero-media">
-          <img src="images/hero-patisserie.jpg" alt="Freshly baked butter croissants, almond croissant, pain au chocolat, raspberry fruit tart, and lattes on a sunlit marble bistro table overlooking the Santa Cruz beach boardwalk" class="hero-img">
+          <img src="images/hero-patisserie.jpg" alt="Freshly baked butter croissants, almond croissant, pain au chocolat, raspberry fruit tart, and lattes on a sunlit marble bistro table overlooking the Santa Cruz Beach Boardwalk" class="hero-img">
           <div class="hero-stamp stamp-top">Opening May 2027</div>
           <div class="hero-stamp stamp-bottom">Fait Maison &bull; Artisanal</div>
         </div>
+      </div>
+    </section>
+
+    <!-- FRESH-BREAK VIDEO FEATURE -->
+    <section id="fresh-break" class="section video-feature" aria-labelledby="video-title">
+      <div class="container">
+        <figure class="video-container">
+          <!-- 5-second croissant-break video, stored in the images folder.
+               Autoplays muted and looping (browsers only allow muted autoplay),
+               with controls so visitors can unmute the crackle and pause. -->
+          <video class="company-video"
+                 autoplay muted loop playsinline controls
+                 preload="metadata"
+                 poster="images/hero-patisserie.jpg"
+                 aria-label="Close-up of a warm butter croissant being broken open, steam rising from its flaky laminated layers">
+            <source src="images/croissant-break.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <figcaption>
+            <span id="video-title">Broken fresh, every morning.</span>
+            Seventy-two hours of lamination, eighty-two percent butter, and five seconds that tell you everything about how we bake. <small>(Tap the speaker icon for sound.)</small>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -105,7 +167,7 @@
 
           <article class="card">
             <h3>Café</h3>
-            <p>Quiche Lorraine and vegetarian quiche, tartines, croque monsieur and madame, soup of the day, house granola and yogurt, plus espresso, drip coffee, tea and hot chocolate. Enjoy it in our 28-seat dining room or on the Pacific Avenue sidewalk patio.</p>
+            <p>Quiche Lorraine and vegetarian quiche, tartines, croque monsieur and madame, soup of the day, house granola and yogurt, plus espresso, drip coffee, tea and hot chocolate. Enjoy it in our 28-seat dining room or on our beachside patio overlooking the Boardwalk.</p>
           </article>
 
           <article class="card">
@@ -121,7 +183,7 @@
       <div class="container">
         <div class="catering-feature">
           <figure class="catering-media">
-            <img src="images/catering-truck.jpg" alt="Vintage cream and navy Crumb &amp; Croissant catering van parked along the Santa Cruz coast with freshly baked croissants, berry tarts, and coffee setup" loading="lazy">
+            <img src="images/catering-truck.jpg" alt="Vintage cream and navy Crumb &amp; Croissant catering van parked along the Santa Cruz coast with freshly baked croissants, berry tarts, and coffee setup" loading="lazy" decoding="async">
           </figure>
           <div class="catering-content">
             <p class="eyebrow">Mobile Pâtisserie &amp; Events</p>
@@ -146,13 +208,13 @@
           <blockquote>
             <p>To bring the craft of a Parisian boulangerie to Santa Cruz: honest ingredients, patient technique, and baked-this-morning goods that make everyday moments and life's milestones feel special.</p>
           </blockquote>
-          <p>Crumb &amp; Croissant is a founder-led French bakery and pâtisserie opening on Pacific Avenue in downtown Santa Cruz, California. It brings a true viennoiserie, a pâtisserie case, a cake studio and a café together under one roof, which is rare in Santa Cruz. Our open kitchen lets you watch the head baker shape croissants as you wait.</p>
-          <p>We serve Santa Cruz residents and downtown workers, the UC Santa Cruz community, visitors on and near Pacific Avenue, and couples, event planners and local businesses who rely on us for cakes, catering and supply.</p>
+          <p>Crumb &amp; Croissant is a founder-led French bakery and pâtisserie opening on the beach in Santa Cruz, California, right by the Santa Cruz Beach Boardwalk. It brings a true viennoiserie, a pâtisserie case, a cake studio and a café together under one roof, which is rare in Santa Cruz. Our open kitchen lets you watch the head baker shape croissants as you wait.</p>
+          <p>We serve Santa Cruz residents and beachgoers, the UC Santa Cruz community, visitors strolling the Boardwalk, and couples, event planners and local businesses who rely on us for cakes, catering and supply.</p>
         </div>
 
         <div class="about-values">
           <figure class="team-photo">
-            <img src="images/employees.jpg" alt="The Crumb &amp; Croissant team collaborating in their sunlit coastal Santa Cruz workspace" loading="lazy">
+            <img src="images/employees.jpg" alt="The Crumb &amp; Croissant team collaborating in their sunlit coastal Santa Cruz workspace" loading="lazy" decoding="async">
             <figcaption>Our Santa Cruz team bringing Parisian craft to the coast.</figcaption>
           </figure>
           <h3>What guides us</h3>
@@ -182,13 +244,13 @@
         </header>
 
         <figure class="lifestyle-banner">
-          <img src="images/beach-bonfire.jpg" alt="Friends gathered around a glowing beach bonfire at dusk in Santa Cruz enjoying croissants, berry tarts, and warm drinks from Crumb &amp; Croissant" loading="lazy">
-          <figcaption>From morning surf checks to twilight beach bonfires—take a box of Santa Cruz's finest pâtisserie anywhere along the coast.</figcaption>
+          <img src="images/beach-bonfire.jpg" alt="Friends gathered around a glowing beach bonfire at dusk in Santa Cruz enjoying croissants, berry tarts, and warm drinks from Crumb &amp; Croissant" loading="lazy" decoding="async">
+          <figcaption>From morning surf checks to twilight beach bonfires&#8212;take a box of Santa Cruz's finest pâtisserie anywhere along the coast.</figcaption>
         </figure>
 
         <ul class="highlights">
           <li><strong>Free croissant</strong> for the first 200 guests each day, plus rolling sample trays of croissant quarters, macaron halves and fruit tart bites.</li>
-          <li><strong>Live French music</strong> from a musette and Gypsy-jazz trio on the sidewalk patio, with a ribbon-cutting at 10 a.m. on Saturday.</li>
+          <li><strong>Live French music</strong> from a musette and Gypsy-jazz trio on our beachside patio, with a ribbon-cutting at 10 a.m. on Saturday.</li>
           <li><strong>Cake tasting table</strong> with four wedding cake flavors and sign-ups for our $45 tasting box, credited toward a booked cake.</li>
           <li><strong>Family fun</strong> with a children's "design your own croissant" coloring station and a "find the baker's beret" game.</li>
           <li><strong>Mother's Day pickups</strong> of pre-ordered gift boxes, ready when we open at 7 a.m. on Sunday.</li>
@@ -227,7 +289,7 @@
             </h3>
             <div class="faq-panel" id="faq-a2" role="region" aria-labelledby="faq-q2">
               <div class="faq-panel-inner">
-                <p>We're on Pacific Avenue in downtown Santa Cruz; the exact address will be posted here before we open. We plan to be open 7 a.m. to 5 p.m., with extended hours on Fridays and Saturdays.</p>
+                <p>We're on the beach in Santa Cruz, right by the Santa Cruz Beach Boardwalk; the exact address will be posted here before we open. We plan to be open 7 a.m. to 5 p.m., with extended hours on Fridays and Saturdays.</p>
               </div>
             </div>
           </div>
@@ -353,8 +415,8 @@
       <div class="footer-col">
         <h2>Visit</h2>
         <address>
-          Pacific Avenue<br>
-          Downtown Santa Cruz, California
+          Santa Cruz Beach Boardwalk<br>
+          On the beach, Santa Cruz, California
         </address>
         <p>Open 7 a.m. to 5 p.m., with extended hours on Fridays and Saturdays.</p>
         <p>Email: <a href="mailto:bakery@gmail.com">bakery@gmail.com</a></p>
@@ -382,10 +444,10 @@
       <button class="modal-close" type="button" data-modal-close aria-label="Close announcement">&times;</button>
       <p class="eyebrow">Save the date</p>
       <h2 id="modal-title">Grand opening: Saturday, May 8, 2027</h2>
-      <p id="modal-desc">Join us on Pacific Avenue in downtown Santa Cruz the weekend before Mother's Day for our first two days of fresh-baked croissants, breads and pastries.</p>
+      <p id="modal-desc">Join us on the beach in Santa Cruz, right by the Beach Boardwalk, the weekend before Mother's Day for our first two days of fresh-baked croissants, breads and pastries.</p>
       <ul class="modal-list">
         <li>A <strong>free butter croissant</strong> for the first 200 guests each day</li>
-        <li><strong>Live French music</strong> on the sidewalk patio, with a ribbon-cutting at 10 a.m. Saturday</li>
+        <li><strong>Live French music</strong> on our beachside patio, with a ribbon-cutting at 10 a.m. Saturday</li>
         <li><strong>Doors open at 7 a.m.</strong> both days, with Mother's Day pre-orders ready for pickup on Sunday</li>
       </ul>
       <div class="modal-actions">
@@ -396,6 +458,16 @@
   </dialog>
 
   <script src="script.js"></script>
+  <!-- Respect visitors who prefer reduced motion: hold the video on its poster frame -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var companyVideo = document.querySelector('.company-video');
+      if (companyVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        companyVideo.removeAttribute('autoplay');
+        companyVideo.pause();
+      }
+    });
+  </script>
  <script type="text/javascript">
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
