@@ -428,6 +428,66 @@ a {
   border-left: 3px solid var(--teal);
 }
 
+/* ---------- Fresh-break video feature ----------
+   Centered showcase card for the 5-second croissant-break clip
+   (images/croissant-break.mp4). Uses the .company-video /
+   .video-container class names from index.html, expressed with
+   brand tokens so it follows the palette and dark mode automatically. */
+.video-feature {
+  /* Sits a little closer beneath the hero than other sections,
+     so hero + video read as one continuous opening statement. */
+  padding-top: clamp(28px, 4vw, 48px);
+}
+
+.video-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 26px 26px;
+  text-align: center;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--butter);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.company-video {
+  display: block;
+  width: 100%;
+  max-width: 640px;        /* keeps the clip clean and sharp on large screens */
+  height: auto;            /* preserves the video's natural aspect ratio */
+  aspect-ratio: 16 / 9;    /* holds the frame steady while the file streams in */
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 10px;     /* matches modern card corners */
+  box-shadow: var(--shadow-md);
+  background: var(--brown-deep); /* warm dark base behind the clip while loading */
+}
+
+.video-container figcaption {
+  margin: 18px auto 0;
+  max-width: 640px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.video-container figcaption span {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: var(--brown);
+}
+
+.video-container figcaption small {
+  font-style: normal;
+  opacity: 0.85;
+}
+
 /* ---------- Buttons ---------- */
 .button {
   display: inline-flex;
@@ -972,6 +1032,8 @@ body.modal-open { overflow: hidden; }
   .catering-content .button { width: 100%; text-align: center; justify-content: center; }
   .about-values { padding: 24px 20px; }
   .stamp-top, .stamp-bottom { left: 16px; }
+  .video-container { padding: 18px 14px 20px; }
+  .video-container figcaption span { font-size: 1.2rem; }
 }
 
 /* ---------- Respect reduced-motion preferences ---------- */
